@@ -1,0 +1,365 @@
+/* =========================================
+   Import Google Fonts (Lora & Open Sans)
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@400;600&display=swap');
+
+/* =========================================
+   Reset & Base Styles
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    /* Efek Tekstur Kertas Tua: Menggunakan gradien halus dan noise */
+    background-color: #f6f0e6;
+    background-image: 
+        linear-gradient(to right, rgba(230, 218, 195, 0.3) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(230, 218, 195, 0.3) 1px, transparent 1px),
+        url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiIHZpZXdCb3g9IjAgMCA0IDQiPjxnIGZpbGwtcmVsZT0iZXZlbm9kZCI+PGcgZmlsbD0iI2QxYzNjMSIgZmlsbC1vcGFjaXR5PSIwLjA1Ij48cGF0aCBkPSJNMCAwaDF2MUgwVjB6TTEgMWgxdjFIMVYxeiBNMiAyaDF2MUgyVjJ6IE0zIDNoMXYxSDNWM3oiLz48L2c+PC9nPjwvc3ZnPg=='); /* Subtle Noise */
+    background-size: 50px 50px, 50px 50px, auto;
+    color: #4a3f35;
+    line-height: 1.8;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Lora', serif; /* Serif untuk Judul agar formal */
+    font-weight: 700;
+    color: #332b24;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 0;
+}
+
+/* =========================================
+   Header & Navigation
+   ========================================= */
+header {
+    background-color: #1a1512;
+    color: #f1e4d1;
+    position: relative;
+    border-bottom: 4px solid #8b4513; /* Aksen warna Cokelat Tua */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 7%;
+    background-color: rgba(0,0,0,0.3); /* Overlay gelap sedikit */
+}
+
+.logo {
+    font-family: 'Lora', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #f1e4d1;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    color: #d8c8b0;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+/* =========================================
+   Hero Section
+   ========================================= */
+.hero {
+    text-align: center;
+    padding: 150px 20px;
+    background: 
+        linear-gradient(rgba(10, 8, 7, 0.8), rgba(10, 8, 7, 0.9)), 
+        url('https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?q=80&w=1600') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Efek Parallax sederhana */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: -1px;
+}
+
+.hero p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #dcd0bc;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   Sections General
+   ========================================= */
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+/* Garis dekoratif di bawah judul section */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #8b4513;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* =========================================
+   Card Grid (Tokoh)
+   ========================================= */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08); /* Shadow yang lebih halus */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0d7c6;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.card img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%; /* Gambar Bulat */
+    margin-bottom: 25px;
+    border: 5px solid #f4ece1;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #2c241e;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #6a5a4a;
+}
+
+/* =========================================
+   Timeline Section (Peristiwa)
+   ========================================= */
+.content-section {
+    background-color: rgba(230, 218, 195, 0.4); /* Background section sedikit berbeda */
+    padding: 80px 0;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Garis tengah Timeline */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #c4b097;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+/* Posisi Kiri dan Kanan */
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+/* Lingkaran Titik pada Timeline */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: -8px;
+    background-color: #fff;
+    border: 3px solid #8b4513;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -8px;
+}
+
+/* Konten di dalam Timeline Item */
+.timeline-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: #8b4513;
+}
+
+.timeline-item p {
+    font-size: 0.95rem;
+    background: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #1a1512;
+    color: #a39382;
+    border-top: 2px solid #332b24;
+}
+
+footer p {
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+/* Styling Quote */
+.quote {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #8b4513;
+    margin-top: 20px;
+    padding: 10px;
+    border-left: 3px solid #8b4513;
+    background: #fdfaf5;
+}
+
+.subtitle {
+    font-weight: 600;
+    color: #8b4513;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+/* Styling Tabel */
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.comparison-table th, .comparison-table td {
+    padding: 15px;
+    border: 1px solid #e0d7c6;
+    text-align: left;
+}
+
+.comparison-table th {
+    background-color: #2c241e;
+    color: #f1e4d1;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.comparison-table tr:nth-child(even) {
+    background-color: #f9f6f2;
+}
+
+/* Styling Halaman Fakta */
+.fakta-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Satu kolom agar fokus membaca */
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.fakta-card {
+    background: #fff;
+    padding: 30px;
+    border-left: 5px solid #8b4513; /* Aksen garis samping */
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.fakta-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.fakta-card h3 {
+    margin-bottom: 10px;
+    color: #2c241e;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #8b4513;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-back:hover {
+    background-color: #5d2e0d;
+}
