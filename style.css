@@ -363,3 +363,111 @@ footer p {
 .btn-back:hover {
     background-color: #5d2e0d;
 }
+
+/* Weapon Page Styling */
+.weapon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.weapon-card {
+    background: #fff;
+    border: 2px solid #dcd0bc;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.weapon-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.aceh { background: #8b4513; color: white; }
+.dutch { background: #2c241e; color: #e2d1b0; }
+
+.weapon-img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain; /* Agar gambar senjata tidak terpotong */
+    background: #fdfaf5;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.specs {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 4px;
+}
+
+.spec-item span:first-child {
+    font-weight: bold;
+    color: #8b4513;
+}
+
+.spec-item span:last-child {
+    color: #444;
+}
+
+.weapon-img {
+    transition: transform 0.3s ease; /* Transisi halus */
+}
+
+.weapon-card:hover .weapon-img {
+    transform: scale(1.1); /* Gambar membesar 10% saat di-hover */
+}
+
+/* Styling Box Gambar Senjata agar Selaras dengan Gambar Meriam */
+.weapon-img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain; /* Penting: agar gambar tidak gepeng */
+    background-color: #d1d1d1; /* Abu-abu yang senada dengan background foto meriam kamu */
+    border: 2px solid #b0a08a; /* Bingkai cokelat tipis agar tetap senada dengan tema web */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    /* Efek bayangan dalam agar terlihat seperti display museum */
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.1);
+    /* Filter agar gambar lain mengikuti tone warna abu-abu meriam */
+    filter: contrast(1.1) grayscale(20%);
+    transition: all 0.3s ease;
+}
+
+.weapon-card:hover .weapon-img {
+    background-color: #e2d1b0; /* Berubah jadi krem saat di-hover */
+    transform: scale(1.03);
+}
+
+/* Penyesuaian Grid Senjata */
+.weapon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.weapon-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e0d7c6;
+    display: flex;
+    flex-direction: column;
+}
