@@ -572,3 +572,190 @@ footer p {
 .dark-card ul li strong {
     color: #ff4d4d;
 }
+
+/* Container Utama */
+.bio-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 30px;
+    margin: 40px auto;
+    background: #1a1a1a; /* Warna dark mode */
+    border-radius: 15px;
+    max-width: 1000px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Membalik urutan untuk tokoh kedua agar tidak monoton */
+.bio-container.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Styling Kolom Gambar */
+.bio-image {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.bio-image img {
+    width: 100%;
+    border: 3px solid #d4af37; /* Aksen emas */
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.bio-image img:hover {
+    transform: scale(1.05); /* Efek zoom tipis */
+}
+
+.caption {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Styling Kolom Teks */
+.bio-text {
+    flex: 2;
+}
+
+.bio-text h2 {
+    color: #d4af37;
+    border-bottom: 2px solid #d4af37;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.bio-text p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #ddd;
+    text-align: justify;
+}
+
+.separator {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #d4af37, transparent);
+    margin: 50px 0;
+}
+
+/* RESPONSIVE: Agar Bagus di HP */
+@media (max-width: 768px) {
+    .bio-container, .bio-container.reverse {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .bio-text {
+        text-align: left;
+    }
+
+    .bio-image {
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Styling Section Daftar Pustaka */
+.reference-box {
+    background-color: #121212; /* Warna lebih gelap dari body */
+    border-top: 2px solid #d4af37; /* Garis emas di atas */
+    padding: 50px 20px;
+    margin-top: 60px;
+}
+
+.ref-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.ref-title {
+    color: #d4af37;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.ref-subtitle {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+/* Layout Grid untuk Link */
+.ref-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.ref-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.ref-category {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #333;
+}
+
+/* Styling Link */
+.ref-link {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.ref-link:before {
+    content: "→ "; /* Panah kecil di depan link */
+    color: #d4af37;
+}
+
+.ref-link:hover {
+    color: #d4af37;
+    padding-left: 10px; /* Efek bergeser saat hover */
+}
+
+/* Responsivitas HP */
+@media (max-width: 600px) {
+    .ref-title {
+        font-size: 1.2rem;
+    }
+    .ref-grid {
+        gap: 20px;
+    }
+}
+
+/* Pembungkus logo dan tulisan */
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* <--- ATUR JARAK DI SINI (kecilkan angkanya kalau mau lebih dekat) */
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    border-radius: 50px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #d4af37;
+    margin: 0; /* Pastikan tidak ada margin bawaan yang mengganggu */
+}
+
